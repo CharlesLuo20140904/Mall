@@ -68,6 +68,14 @@
     return _pageControl;
 }
 
+-(void)startTimer{
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0 target:self selector:@selector(startRun:) userInfo:nil repeats:YES];
+}
+
+-(void)stopTimer{
+    [self.timer setFireDate:[NSDate distantFuture]];
+}
+
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
