@@ -57,10 +57,10 @@
 }
 
 -(UIPageControl *)pageControl{
-    if (_pageControl == nil) {
+    if (_pageControl == nil) { 
         _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0.0, SCREEN_RECT.size.width/2-10.0, SCREEN_RECT.size.width, 10.0)];
         _pageControl.currentPage = 1;
-        _pageControl.numberOfPages = 4; 
+        _pageControl.numberOfPages = 4;
         _pageControl.pageIndicatorTintColor = [UIColor grayColor];
         _pageControl.currentPageIndicatorTintColor = [UIColor blueColor];
 //        [_pageControl addTarget:self action:@selector(<#selector#>) forControlEvents:<#(UIControlEvents)#>];
