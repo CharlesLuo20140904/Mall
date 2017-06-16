@@ -18,7 +18,6 @@
 @property (strong, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) NSTimeInterval scrollDuration;
 @end
-
 @implementation SwipeBannerView
 
 -(instancetype)initWithFrame:(CGRect)frame{
