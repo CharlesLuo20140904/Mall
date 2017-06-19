@@ -15,6 +15,8 @@
 @property (strong, nonatomic) UIImageView *rightImageView;
 @property (strong, nonatomic) UIPageControl *pageControl;
 @property (assign, nonatomic) NSInteger currentIndex;
+@property (assign, nonatomic) NSInteger leftIndex;
+@property (assign, nonatomic) NSInteger rightIndex;
 @property (strong, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) NSTimeInterval scrollDuration;
 @property (assign, nonatomic) NSInteger index;
@@ -25,7 +27,7 @@
     
     self = [super initWithFrame:frame];
     if (self) {
-        NSLog(@"asdasdasd");
+        self.index = 5;
         self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0,  0.0, frame.size.width, frame.size.height)];
         self.scrollView.pagingEnabled = YES;
         self.scrollView.contentSize = CGSizeMake(3*SCREEN_WIDTH, 0.0);
@@ -76,7 +78,8 @@
 }
 
 -(void)resetImage{
-    self.index++;
+    self.leftIndex = (self.currentIndex + self.imageNameArr.count - 1);
+    self.rightIndex = (self.currentIndex +self.imageNameArr.count + 1);
     
 }
 
