@@ -11,5 +11,5 @@
 @interface SwipeBannerView : UIView
 
 @property (strong, nonatomic) NSArray *imageNameArr;
-
+-(SwipeBannerView*)swipeViewInitWithImageurls:(NSArray*)imgUrl indicatorTintColor:(UIColor*)color currentIndicatorTintColor:(UIColor*)currentColor compeltion:(void(^)(NSString *result))compeltion;
 @end

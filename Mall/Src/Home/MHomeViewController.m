@@ -19,13 +19,13 @@
     [super viewDidLoad];
 //    SwipeBannerView *swipeView = [[SwipeBannerView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREEN_RECT.size.width, [UIScreen mainScreen].bounds.size.width/2)];
 //    [self.view addSubview:swipeView];
-//    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.parentViewController.automaticallyAdjustsScrollViewInsets = NO;
-//    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+//    self.parentViewController.automaticallyAdjustsScrollViewInsets = NO;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 //    self.navigationController.navigationBar.translucent = NO;
-    UIView *demoView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 64.0,SCREEN_RECT.size.width, SCREEN_RECT.size.width/2.0)];
-    demoView.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:demoView];
+    SwipeBannerView *swipeView = [[SwipeBannerView alloc] initWithFrame:CGRectMake(0.0, 0.0,SCREEN_WIDTH, SCREEN_WIDTH/2)];
+//    demoView.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:swipeView];
 }
 
 - (void)didReceiveMemoryWarning {

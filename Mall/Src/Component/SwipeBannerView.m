@@ -17,6 +17,7 @@
 @property (assign, nonatomic) NSInteger currentIndex;
 @property (strong, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) NSTimeInterval scrollDuration;
+@property (assign, nonatomic) NSInteger index;
 @end
 @implementation SwipeBannerView
 
@@ -24,30 +25,24 @@
     
     self = [super initWithFrame:frame];
     if (self) {
-        self.scrollView = [[UIScrollView alloc] initWithFrame:frame];
+        NSLog(@"asdasdasd");
+        self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0,  0.0, frame.size.width, frame.size.height)];
         self.scrollView.pagingEnabled = YES;
-        self.scrollView.contentSize = CGSizeMake(3*SCREEN_RECT.size.width, 0.0);
+        self.scrollView.contentSize = CGSizeMake(3*SCREEN_WIDTH, 0.0);
         self.scrollView.showsHorizontalScrollIndicator = NO;
         self.scrollView.delegate = self;
-        [self.scrollView setContentOffset:CGPointMake(SCREEN_RECT.size.width, 0.0)];
+        [self.scrollView setContentOffset:CGPointMake(SCREEN_WIDTH, 0.0)];
         self.imageNameArr = @[@"1.jpg",@"2.jpg",@"3.jpg",@"4.jpg"];
-        NSInteger count = [self.imageNameArr count];
-        NSLog(@"%f",SCREEN_RECT.size.width/2);
-        for (int i=0; i<count-1; i++) {
-            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0+i*SCREEN_RECT.size.width, 0.0, SCREEN_RECT.size.width, 187.5)];
-            if (i == 0) {
-                imageView.image = [UIImage imageNamed:self.imageNameArr[count-1]];
-                self.leftImageView = imageView;
-            }else if (i == 1){
-                imageView.image = [UIImage imageNamed:self.imageNameArr[i-1]];
-                self.centerImageView = imageView;
-            }else if (i ==2 ){
-                imageView.image = [UIImage imageNamed:self.imageNameArr[i-1]];
-                self.rightImageView = imageView;
-            }
-            [self.scrollView addSubview:imageView];
-        }
-        
+
+        self.leftImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREEN_WIDTH, frame.size.height)];
+        self.centerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 0.0, SCREEN_WIDTH, frame.size.height)];
+        self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH*2, 0.0, SCREEN_WIDTH, frame.size.height)];
+        self.leftImageView.image = [UIImage imageNamed:self.imageNameArr[self.imageNameArr.count-1]];
+        self.centerImageView.image = [UIImage imageNamed:self.imageNameArr[1]];
+        self.rightImageView.image = [UIImage imageNamed:self.imageNameArr[2]];
+        [self.scrollView addSubview:self.leftImageView];
+        [self.scrollView addSubview:self.centerImageView];
+        [self.scrollView addSubview:self.rightImageView];
         [self addSubview:self.scrollView];
         [self addSubview:self.pageControl];
 
@@ -57,7 +52,7 @@
 
 -(UIPageControl *)pageControl{
     if (_pageControl == nil) { 
-        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0.0, SCREEN_RECT.size.width/2-10.0, SCREEN_RECT.size.width, 10.0)];
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0.0, SCREEN_WIDTH/2.0-10.0, SCREEN_WIDTH, 10.0)];
         _pageControl.currentPage = 1;
         _pageControl.numberOfPages = 4;
         _pageControl.pageIndicatorTintColor = [UIColor grayColor];
@@ -68,16 +63,27 @@
 }
 
 -(void)startTimer{
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0 target:self selector:@selector(startRun:) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0 target:self selector:@selector(startRun) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
 -(void)stopTimer{
     [self.timer setFireDate:[NSDate distantFuture]];
 }
 
+-(void)startRun{
+    
+}
+
+-(void)resetImage{
+    self.index++;
+    
+}
+
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
+    self.currentIndex = (NSInteger)(scrollView.contentOffset.x/SCREEN_WIDTH+0.5)%(NSInteger)SCREEN_WIDTH;
+    NSLog(@"%zi",self.currentIndex);
 }
 
 -(BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView{
@@ -85,11 +91,14 @@
 }
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    
+    [self stopTimer];
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    
+    if (self.imageNameArr.count > 1) {
+        [self.timer setFireDate:[NSDate dateWithTimeInterval:1.5 sinceDate:[NSDate date]]];
+    }
+    [scrollView setContentOffset:CGPointMake(SCREEN_WIDTH, 0.0)];
 }
 
 -(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{

@@ -17,7 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:SCREEN_RECT];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     MTabbarController *tc = [[MTabbarController alloc] init];
     self.window.rootViewController = tc;
     [self.window makeKeyAndVisible];
