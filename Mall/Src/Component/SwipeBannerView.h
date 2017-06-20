@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SwipeBannerView : UIView
+@protocol mydelegate <NSObject>
 
+-(void)delegatemethod;
+
+@end
+
+@interface SwipeBannerView : UIView
+@property (assign, nonatomic) id<mydelegate> delegate;
 @property (strong, nonatomic) NSArray *imageNameArr;
--(SwipeBannerView*)swipeViewInitWithImageurls:(NSArray*)imgUrl indicatorTintColor:(UIColor*)color currentIndicatorTintColor:(UIColor*)currentColor compeltion:(void(^)(NSString *result))compeltion;
+-(void)swipeViewInitWithFrame:(CGRect)fram
+                                Imageurls:(NSArray*)imgUrl
+                       indicatorTintColor:(UIColor*)color
+                currentIndicatorTintColor:(UIColor*)currentColor
+                                 duration:(NSTimeInterval)duration;
 @end
