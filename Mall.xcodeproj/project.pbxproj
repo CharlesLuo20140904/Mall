@@ -13,7 +13,8 @@
 		2D3BA6B61ECC2CD8008E5372 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D3BA6B21ECC2CD8008E5372 /* 2.jpg */; };
 		2D3BA6B71ECC2CD8008E5372 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D3BA6B31ECC2CD8008E5372 /* 1.jpg */; };
 		2D7A84D21EF8FE20004B3538 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A84D11EF8FE20004B3538 /* WebViewController.m */; };
-		2D7A84D51EF925AA004B3538 /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A84D41EF925AA004B3538 /* FourViewController.m */; };
+		2D920D341EFA7A4400B991D2 /* ClassifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D920D331EFA7A4400B991D2 /* ClassifyView.m */; };
+		2D920D391EFA7AD300B991D2 /* RequstServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D920D381EFA7AD300B991D2 /* RequstServer.m */; };
 		B1A43F241EC4B6A200377912 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A43F231EC4B6A200377912 /* main.m */; };
 		B1A43F271EC4B6A200377912 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A43F261EC4B6A200377912 /* AppDelegate.m */; };
 		B1A43F2F1EC4B6A200377912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1A43F2E1EC4B6A200377912 /* Assets.xcassets */; };
@@ -55,8 +56,10 @@
 		2D3BA6B31ECC2CD8008E5372 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		2D7A84D01EF8FE20004B3538 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		2D7A84D11EF8FE20004B3538 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		2D7A84D31EF925AA004B3538 /* FourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
-		2D7A84D41EF925AA004B3538 /* FourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
+		2D920D321EFA7A4400B991D2 /* ClassifyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyView.h; sourceTree = "<group>"; };
+		2D920D331EFA7A4400B991D2 /* ClassifyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyView.m; sourceTree = "<group>"; };
+		2D920D371EFA7AD300B991D2 /* RequstServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequstServer.h; sourceTree = "<group>"; };
+		2D920D381EFA7AD300B991D2 /* RequstServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequstServer.m; sourceTree = "<group>"; };
 		B1A43F1F1EC4B6A200377912 /* Mall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A43F231EC4B6A200377912 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B1A43F251EC4B6A200377912 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -117,10 +120,10 @@
 			children = (
 				2D3BA6AC1ECC28A0008E5372 /* SwipeBannerView.h */,
 				2D3BA6AD1ECC28A0008E5372 /* SwipeBannerView.m */,
-				2D7A84D31EF925AA004B3538 /* FourViewController.h */,
-				2D7A84D41EF925AA004B3538 /* FourViewController.m */,
 				2D7A84D01EF8FE20004B3538 /* WebViewController.h */,
 				2D7A84D11EF8FE20004B3538 /* WebViewController.m */,
+				2D920D321EFA7A4400B991D2 /* ClassifyView.h */,
+				2D920D331EFA7A4400B991D2 /* ClassifyView.m */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -134,6 +137,23 @@
 				2D3BA6B31ECC2CD8008E5372 /* 1.jpg */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		2D920D351EFA7A7000B991D2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				2D920D361EFA7A8F00B991D2 /* Network */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		2D920D361EFA7A8F00B991D2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2D920D371EFA7AD300B991D2 /* RequstServer.h */,
+				2D920D381EFA7AD300B991D2 /* RequstServer.m */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		B1A43F161EC4B6A200377912 = {
@@ -198,6 +218,7 @@
 		B1A43F551EC4B6AF00377912 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				2D920D351EFA7A7000B991D2 /* Util */,
 				2D3BA6AF1ECC2BB5008E5372 /* Resource */,
 				2D3BA6AB1ECC283E008E5372 /* Component */,
 				B1A43F5C1EC4BCC300377912 /* PersonCenter */,
@@ -409,15 +430,16 @@
 			files = (
 				B1A43F6E1EC4BDCB00377912 /* MCartViewController.m in Sources */,
 				B1A43F271EC4B6A200377912 /* AppDelegate.m in Sources */,
+				2D920D391EFA7AD300B991D2 /* RequstServer.m in Sources */,
 				2D7A84D21EF8FE20004B3538 /* WebViewController.m in Sources */,
 				B1A43F241EC4B6A200377912 /* main.m in Sources */,
 				B1A43F681EC4BDAF00377912 /* MClassifyViewController.m in Sources */,
 				B1A43F5F1EC4BD5700377912 /* MTabbarController.m in Sources */,
-				2D7A84D51EF925AA004B3538 /* FourViewController.m in Sources */,
 				B1A43F711EC4BDDD00377912 /* MPersonCenterViewController.m in Sources */,
 				B1A43F621EC4BD8600377912 /* MNavigationController.m in Sources */,
 				2D3BA6AE1ECC28A0008E5372 /* SwipeBannerView.m in Sources */,
 				B1A43F651EC4BDA100377912 /* MHomeViewController.m in Sources */,
+				2D920D341EFA7A4400B991D2 /* ClassifyView.m in Sources */,
 				B1A43F6B1EC4BDC000377912 /* MActivitiesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

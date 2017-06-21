@@ -8,17 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol mydelegate <NSObject>
-
--(void)delegatemethod;
-
-@end
-
 @interface SwipeBannerView : UIView
-@property (assign, nonatomic) id<mydelegate> delegate;
+@property (copy, nonatomic) void(^clickImgAction) (NSInteger curIndex);
 @property (strong, nonatomic) NSArray *imageNameArr;
--(void)swipeViewInitWithFrame:(CGRect)fram
-                                Imageurls:(NSArray*)imgUrl
+-(void)swipeViewInitWithFrame:(CGRect)frame
+                                Imageurls:(NSArray*)imgUrls
                        indicatorTintColor:(UIColor*)color
                 currentIndicatorTintColor:(UIColor*)currentColor
                                  duration:(NSTimeInterval)duration;

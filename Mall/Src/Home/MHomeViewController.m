@@ -10,7 +10,7 @@
 #import "SwipeBannerView.h"
 #import "WebViewController.h"
 
-@interface MHomeViewController ()<mydelegate>
+@interface MHomeViewController ()
 
 @end
 
@@ -19,25 +19,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hidesBottomBarWhenPushed = YES;
-//    SwipeBannerView *swipeView = [[SwipeBannerView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREEN_RECT.size.width, [UIScreen mainScreen].bounds.size.width/2)];
-//    [self.view addSubview:swipeView];
     self.automaticallyAdjustsScrollViewInsets = NO;
-//    self.parentViewController.automaticallyAdjustsScrollViewInsets = NO;
     self.edgesForExtendedLayout = UIRectEdgeNone;
-//    self.navigationController.navigationBar.translucent = NO;
-    SwipeBannerView *swipeView = [[SwipeBannerView alloc] initWithFrame:CGRectMake(0.0, 0.0,SCREEN_WIDTH, SCREEN_WIDTH/2)];
-    swipeView.delegate = self;
-//    demoView.backgroundColor = [UIColor grayColor];
+    NSArray *imageArr = @[@"1.jpg",@"2.jpg",@"3.jpg",@"4.jpg",];
+    SwipeBannerView *swipeView = [[SwipeBannerView alloc] init];
+    [swipeView swipeViewInitWithFrame:CGRectMake(0.0, 0.0,SCREEN_WIDTH, SCREEN_WIDTH/2)
+                            Imageurls:imageArr indicatorTintColor:[UIColor grayColor]
+            currentIndicatorTintColor:[UIColor redColor]
+                             duration:3];
+    swipeView.clickImgAction = ^(NSInteger curIndex) {
+        if (curIndex == 0) {
+            NSLog(@"succeed");
+        }
+    };
     [self.view addSubview:swipeView];
 }
 
--(void)delegatemethod{
-    NSLog(@"++");
-    WebViewController *wv = [[WebViewController alloc] init];
-    wv.isone = 1;
-    [wv.webV loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://zdf.jooau.com"]]];
-    [self.navigationController pushViewController:wv animated:YES];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

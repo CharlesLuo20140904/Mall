@@ -1,6 +1,6 @@
 //
 //  SwipeBannerView.m
-//  Mall
+//  图片轮播控件
 //
 //  Created by Chow Tai Fook on 2017/5/17.
 //  Copyright © 2017年 luo. All rights reserved.
@@ -22,71 +22,134 @@
 @end
 @implementation SwipeBannerView
 
--(void)swipeViewInitWithFrame:(CGRect)fram Imageurls:(NSArray *)imgUrl indicatorTintColor:(UIColor *)color currentIndicatorTintColor:(UIColor *)currentColor duration:(NSTimeInterval)duration{
-    
-}
-
--(instancetype)initWithFrame:(CGRect)frame{
-    
-    self = [super initWithFrame:frame];
+-(instancetype)init{
+    self = [super init];
     if (self) {
         self.currentIndex=0;
-        self.scrollView.frame = frame;
-        [self.scrollView setContentOffset:CGPointMake(SCREEN_WIDTH, 0.0)];
-        [self addSubview:self.scrollView];
-        self.imageNameArr = @[@"1.jpg",@"2.jpg",@"3.jpg",@"4.jpg"];
-        self.leftImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREEN_WIDTH, frame.size.height)];
-        self.centerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH, 0.0, SCREEN_WIDTH, frame.size.height)];
-        self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH*2, 0.0, SCREEN_WIDTH, frame.size.height)];
-        self.leftImageView.image = [UIImage imageNamed:self.imageNameArr[self.imageNameArr.count-1]];
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToWebview)];
-        self.centerImageView.userInteractionEnabled = YES;
-        [self.centerImageView addGestureRecognizer:tap];
-        self.centerImageView.image = [UIImage imageNamed:self.imageNameArr[0]];
-        self.rightImageView.image = [UIImage imageNamed:self.imageNameArr[1]];
-        [self.scrollView addSubview:self.leftImageView];
-        [self.scrollView addSubview:self.centerImageView];
-        [self.scrollView addSubview:self.rightImageView];
-        [self addSubview:self.pageControl];
-        [self startTimer];
     }
     return self;
 }
 
+
+
+-(void)swipeViewInitWithFrame:(CGRect)frame Imageurls:(NSArray *)imgUrls indicatorTintColor:(UIColor *)color currentIndicatorTintColor:(UIColor *)currentColor duration:(NSTimeInterval)duration{
+    self.frame = frame;
+    self.scrollView.frame = frame;
+    [self addSubview:self.scrollView];
+    self.imageNameArr = imgUrls;
+    
+    /** 如果是1张图，不显示小圆点，同时不启动轮播 **/
+    if (self.imageNameArr.count != 0) {
+        if (self.imageNameArr.count == 1) {
+            [self.scrollView setContentOffset:CGPointMake(SCREEN_WIDTH, 0.0)];
+            /** 中间的imageView **/
+            self.centerImageView.frame = CGRectMake(SCREEN_WIDTH, 0.0, SCREEN_WIDTH, frame.size.height);
+            self.centerImageView.image = [UIImage imageNamed:self.imageNameArr[0]];
+            [self.scrollView addSubview:self.centerImageView];
+        }else{
+            self.scrollView.contentSize = CGSizeMake(3*SCREEN_WIDTH, 0.0);
+            [self.scrollView setContentOffset:CGPointMake(SCREEN_WIDTH, 0.0)];
+            /** 左边的imageView **/
+            self.leftImageView.frame = CGRectMake(0.0, 0.0, SCREEN_WIDTH, frame.size.height);
+            self.leftImageView.image = [UIImage imageNamed:self.imageNameArr[self.imageNameArr.count-1]];
+            [self.scrollView addSubview:self.leftImageView];
+            
+            /** 中间的imageView **/
+            self.centerImageView.frame = CGRectMake(SCREEN_WIDTH, 0.0, SCREEN_WIDTH, frame.size.height);
+            self.centerImageView.image = [UIImage imageNamed:self.imageNameArr[0]];
+            [self.scrollView addSubview:self.centerImageView];
+            
+            /** 右边的imageView **/
+            self.rightImageView.frame = CGRectMake(SCREEN_WIDTH*2, 0.0, SCREEN_WIDTH, frame.size.height);
+            self.rightImageView.image = [UIImage imageNamed:self.imageNameArr[1]];
+            [self.scrollView addSubview:self.rightImageView];
+            
+            /** 小圆点 **/
+            self.pageControl.frame = CGRectMake(0.0, SCREEN_WIDTH/2.0-10.0, SCREEN_WIDTH, 10.0);
+            self.pageControl.numberOfPages = self.imageNameArr.count;
+            self.pageControl.pageIndicatorTintColor = color;
+            self.pageControl.currentPageIndicatorTintColor = currentColor;
+            [self addSubview:self.pageControl];
+            
+            /** 定时器滚动 **/
+            self.scrollDuration = duration;
+            [self startTimer];
+        }
+    }
+}
+
+/**
+ ** scrollView委托方法
+ **/
 -(UIScrollView *)scrollView{
     if (!_scrollView) {
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.pagingEnabled = YES;
-        _scrollView.contentSize = CGSizeMake(3*SCREEN_WIDTH, 0.0);
+        _scrollView.scrollEnabled = YES;
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.delegate = self;
     }
     return _scrollView;
 }
 
--(void)jumpToWebview{
-    [self.delegate delegatemethod];
-}
-
 -(UIPageControl *)pageControl{
     if (_pageControl == nil) { 
-        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0.0, SCREEN_WIDTH/2.0-10.0, SCREEN_WIDTH, 10.0)];
+        _pageControl = [[UIPageControl alloc] init];
         _pageControl.currentPage = 0;
-        _pageControl.numberOfPages = 4;
-        _pageControl.pageIndicatorTintColor = [UIColor grayColor];
-        _pageControl.currentPageIndicatorTintColor = [UIColor blueColor];
     }
     return _pageControl;
 }
 
--(void)startTimer{
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(startRun) userInfo:nil repeats:YES];
+-(UIImageView *)leftImageView{
+    if (!_leftImageView) {
+        _leftImageView = [[UIImageView alloc] init];
+    }
+    return _leftImageView;
 }
 
+-(UIImageView *)centerImageView{
+    if (!_centerImageView) {
+        _centerImageView = [[UIImageView alloc] init];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imgAction:)];
+        self.centerImageView.userInteractionEnabled = YES;
+        [self.centerImageView addGestureRecognizer:tap];
+    }
+    return _centerImageView;
+}
+
+-(UIImageView *)rightImageView{
+    if (!_rightImageView) {
+        _rightImageView = [[UIImageView alloc] init];
+    }
+    return _rightImageView;
+}
+
+/**
+ ** 点击图片
+ **/
+-(void)imgAction:(UITapGestureRecognizer*)singleTap{
+    if (self.clickImgAction) {
+        self.clickImgAction(self.currentIndex);
+    }
+}
+
+/**
+ ** 启动定时器
+ **/
+-(void)startTimer{
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:self.scrollDuration target:self selector:@selector(startRun) userInfo:nil repeats:YES];
+}
+
+/**
+ ** 停止定时器
+ **/
 -(void)stopTimer{
     [self.timer setFireDate:[NSDate distantFuture]];
 }
 
+/**
+ ** 定时器的方法
+ **/
 -(void)startRun{
     [self.scrollView setContentOffset:CGPointMake(2*SCREEN_WIDTH, 0.0) animated:YES];
 }
@@ -100,7 +163,9 @@
     [self.scrollView setContentOffset:CGPointMake(SCREEN_WIDTH, 0.0)];;
 }
 
-
+/**
+ ** scrollView委托方法
+ **/
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat offsetX = scrollView.contentOffset.x/SCREEN_WIDTH;
     if (offsetX == 0) {
