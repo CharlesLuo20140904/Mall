@@ -12,6 +12,7 @@
 		2D3BA6B51ECC2CD8008E5372 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D3BA6B11ECC2CD8008E5372 /* 4.jpg */; };
 		2D3BA6B61ECC2CD8008E5372 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D3BA6B21ECC2CD8008E5372 /* 2.jpg */; };
 		2D3BA6B71ECC2CD8008E5372 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D3BA6B31ECC2CD8008E5372 /* 1.jpg */; };
+		2D5FDF791EFBC25A00D09792 /* ClassifyIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5FDF781EFBC25A00D09792 /* ClassifyIconView.m */; };
 		2D7A84D21EF8FE20004B3538 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A84D11EF8FE20004B3538 /* WebViewController.m */; };
 		2D920D341EFA7A4400B991D2 /* ClassifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D920D331EFA7A4400B991D2 /* ClassifyView.m */; };
 		2D920D391EFA7AD300B991D2 /* RequstServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D920D381EFA7AD300B991D2 /* RequstServer.m */; };
@@ -54,6 +55,8 @@
 		2D3BA6B11ECC2CD8008E5372 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		2D3BA6B21ECC2CD8008E5372 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		2D3BA6B31ECC2CD8008E5372 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		2D5FDF771EFBC25A00D09792 /* ClassifyIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyIconView.h; sourceTree = "<group>"; };
+		2D5FDF781EFBC25A00D09792 /* ClassifyIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyIconView.m; sourceTree = "<group>"; };
 		2D7A84D01EF8FE20004B3538 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		2D7A84D11EF8FE20004B3538 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		2D920D321EFA7A4400B991D2 /* ClassifyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyView.h; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				2D7A84D11EF8FE20004B3538 /* WebViewController.m */,
 				2D920D321EFA7A4400B991D2 /* ClassifyView.h */,
 				2D920D331EFA7A4400B991D2 /* ClassifyView.m */,
+				2D5FDF771EFBC25A00D09792 /* ClassifyIconView.h */,
+				2D5FDF781EFBC25A00D09792 /* ClassifyIconView.m */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -435,6 +440,7 @@
 				B1A43F241EC4B6A200377912 /* main.m in Sources */,
 				B1A43F681EC4BDAF00377912 /* MClassifyViewController.m in Sources */,
 				B1A43F5F1EC4BD5700377912 /* MTabbarController.m in Sources */,
+				2D5FDF791EFBC25A00D09792 /* ClassifyIconView.m in Sources */,
 				B1A43F711EC4BDDD00377912 /* MPersonCenterViewController.m in Sources */,
 				B1A43F621EC4BD8600377912 /* MNavigationController.m in Sources */,
 				2D3BA6AE1ECC28A0008E5372 /* SwipeBannerView.m in Sources */,
