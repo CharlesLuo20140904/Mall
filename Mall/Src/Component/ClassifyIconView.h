@@ -10,4 +10,7 @@
 
 @interface ClassifyIconView : UIView
 
+@property (copy, nonatomic) void(^clickIconAction) (NSInteger curIndex);
+-(void)iconViewWithIconData:(NSDictionary*)iconDataDict;
+
 @end

@@ -9,6 +9,7 @@
 #import "MHomeViewController.h"
 #import "SwipeBannerView.h"
 #import "WebViewController.h"
+#import "ClassifyIconView.h"
 
 @interface MHomeViewController ()
 
@@ -33,6 +34,12 @@
         }
     };
     [self.view addSubview:swipeView];
+    ClassifyIconView *iconView = [[ClassifyIconView alloc] init];
+    [iconView iconViewWithIconData:nil];
+    iconView.clickIconAction = ^(NSInteger curIndex) {
+        NSLog(@"%zi",curIndex);
+    };
+    [self.view addSubview:iconView];
 }
 
 
