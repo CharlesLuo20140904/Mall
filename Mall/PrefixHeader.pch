@@ -13,4 +13,6 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define HOME_TAB_SCENE_URL @"http://ctfhoko.com/index.php/api/v2/home-scene?react_mobile=true"
 #endif /* PrefixHeader_pch */

@@ -10,9 +10,11 @@
 #import "SwipeBannerView.h"
 #import "WebViewController.h"
 #import "ClassifyIconView.h"
+#import "CLNetworkingManager.h"
+#import <JSONModel/JSONModel.h>
+#import "HomeModel.h"
 
 @interface MHomeViewController ()
-
 @end
 
 @implementation MHomeViewController
@@ -23,6 +25,15 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     NSArray *imageArr = @[@"1.jpg",@"2.jpg",@"3.jpg",@"4.jpg",];
+    [CLNetworkingManager getNetworkRequestWithUrlString:HOME_TAB_SCENE_URL parameters:nil isCache:YES succeed:^(id data) {
+//        NSLog(@"%@",data);
+        NSData *d = [NSJSONSerialization dataWithJSONObject:data options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *str = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
+//        Section_Content *hm = [[Section_Content alloc] initWithString:str error:nil];
+//        NSLog(@"%@",hm);
+    } fail:^(NSError *error) {
+        
+    }];
     SwipeBannerView *swipeView = [[SwipeBannerView alloc] init];
     [swipeView swipeViewInitWithFrame:CGRectMake(0.0, 0.0,SCREEN_WIDTH, SCREEN_WIDTH/2)
                             Imageurls:imageArr indicatorTintColor:[UIColor grayColor]
