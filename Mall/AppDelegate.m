@@ -17,6 +17,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor darkGrayColor]];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     MTabbarController *tc = [[MTabbarController alloc] init];
     self.window.rootViewController = tc;

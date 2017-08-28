@@ -22,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    self.automaticallyAdjustsScrollViewInsets = YES;
+//    self.extendedLayoutIncludesOpaqueBars = YES;
     NSArray *titleArr = @[@"首页",@"分类",@"最新优惠",@"购物车",@"个人中心"];
     NSArray *controllers = @[@"MHomeViewController",@"MClassifyViewController",@"MActivitiesViewController",@"MCartViewController",@"MPersonCenterViewController"];
     NSMutableArray *temp = [NSMutableArray arrayWithCapacity:5];

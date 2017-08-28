@@ -7,7 +7,10 @@
 //
 
 #import <JSONModel/JSONModel.h>
+#import "Widget_object.h"
 
 @interface Section_content : JSONModel
-
+@property (strong, nonatomic) NSArray<Widget_object *> *widget_object;
+@property (strong, nonatomic) NSString *widget_object_hash;
+@property (strong, nonatomic) NSString *widget_object_last_modify;
 @end
