@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MSearchViewController : UISearchController
+@protocol MSearchViewDelegate <NSObject>
 
+-(void)pushView;
+
+@end
+
+@interface MSearchViewController : UISearchController
+@property (assign, nonatomic) id<MSearchViewDelegate> Mdelegate;
 @end

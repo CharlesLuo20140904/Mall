@@ -7,9 +7,15 @@
 //
 
 #import "MSearchKeyWordView.h"
+#import "MHistoryCell.h"
+#import "MSearchLayout.h"
+
+#define CELL_HEIGHT 30.0
 
 @interface MSearchKeyWordView ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (strong, nonatomic) UICollectionView *collectionView;
+@property (strong, nonatomic) NSArray *historyArr;
+@property (strong, nonatomic) NSArray *hotKeyArr;
 @end
 
 @implementation MSearchKeyWordView
@@ -18,18 +24,24 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
-        self.collectionView.backgroundColor = [UIColor whiteColor];
-        self.collectionView.dataSource = self;
-        self.collectionView.delegate = self;
-        [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"historyCell"];
-        [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"historyHeader"];
-        [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"hotKeyHeader"];
-        [self addSubview:self.collectionView];
-        self.historyArr = @[@"面膜",@"面膜啊大叔大婶的啊实打实的",@"面膜是事实",@"面膜啊",@"面膜啊实打",];
+        self.backgroundColor = [UIColor whiteColor];
+
     }
     return self;
+}
+
+-(void)keyWordViewInitWithFrame:(CGRect)frame historyKeys:(NSArray *)historyArr hotkeys:(NSArray *)hotkeysArr{
+    self.frame = frame;
+    MSearchLayout *layout = [[MSearchLayout alloc] init];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0.0, 10.0, frame.size.width, frame.size.height-10.0) collectionViewLayout:layout];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
+    [self.collectionView registerClass:[MHistoryCell class] forCellWithReuseIdentifier:@"historyCell"];
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"historyHeader"];
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"hotKeyHeader"];
+    [self addSubview:self.collectionView];
+    self.historyArr = historyArr;
 }
 
 -(NSMutableArray *)sizeForArr:(NSArray*)stringArr{
@@ -64,7 +76,8 @@
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     NSArray *sizeArr = [self sizeForArr:self.historyArr];
 //    NSLog(@"===%zi",[self.historyArr[indexPath.row] length]);
-    return [sizeArr[indexPath.row] CGSizeValue];
+    CGSize size = [sizeArr[indexPath.row] CGSizeValue];
+    return CGSizeMake(size.width+10.0, CELL_HEIGHT);
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
@@ -80,6 +93,10 @@
         title.text = @"搜索历史";
         title.font = [UIFont systemFontOfSize:14];
         [headView addSubview:title];
+        UIButton *deleteButtton = [UIButton buttonWithType:UIButtonTypeSystem];
+        [deleteButtton setFrame:CGRectMake(SCREEN_WIDTH-45.0, 5.0, 20.0, 20.0)];
+        [deleteButtton setBackgroundImage:[UIImage imageNamed:@"垃圾桶"] forState:UIControlStateNormal];
+        [headView addSubview:deleteButtton];
     }else if (indexPath.section == 1){
         headView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headIdentifier forIndexPath:indexPath];
         UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 5.0, 100.0, 20.0)];
@@ -92,13 +109,15 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"historyCell" forIndexPath:indexPath];
-    if (!cell) {
-        //
-    }
-    cell.backgroundColor = [UIColor greenColor];
-    UILabel *label = [];
+    MHistoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"historyCell" forIndexPath:indexPath];
+    cell.content = self.historyArr[indexPath.row];
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.clickCell) {
+        self.clickCell(indexPath);
+    }
 }
 
 

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MSearchKeyWordView : UIView
-@property (strong, nonatomic) NSArray *historyArr;
-@property (strong, nonatomic) NSArray *hotKeyArr;
+@property (copy, nonatomic) void(^clickCell) (NSIndexPath * currentIndexPath);
+-(void)keyWordViewInitWithFrame:(CGRect)frame
+                    historyKeys:(NSArray*)historyArr
+                        hotkeys:(NSArray*)hotkeysArr;
 @end

@@ -12,6 +12,9 @@
 		2D0D5B751F5015C800EE1911 /* MSearchKeyWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0D5B741F5015C800EE1911 /* MSearchKeyWordView.m */; };
 		2D0D5B7C1F502F0200EE1911 /* 消息@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0D5B7A1F502F0200EE1911 /* 消息@2x.png */; };
 		2D0D5B7D1F502F0200EE1911 /* 扫一扫@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D0D5B7B1F502F0200EE1911 /* 扫一扫@2x.png */; };
+		2D34CBE01F57EDFF006D6FA6 /* MSearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D34CBDF1F57EDFF006D6FA6 /* MSearchResultController.m */; };
+		2D34CBE31F57FC45006D6FA6 /* MSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D34CBE21F57FC45006D6FA6 /* MSearchResultCell.m */; };
+		2D34CBE61F5801BF006D6FA6 /* MResultListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D34CBE51F5801BF006D6FA6 /* MResultListViewController.m */; };
 		2D3BA6AE1ECC28A0008E5372 /* SwipeBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3BA6AD1ECC28A0008E5372 /* SwipeBannerView.m */; };
 		2D3BA6B41ECC2CD8008E5372 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D3BA6B01ECC2CD8008E5372 /* 3.jpg */; };
 		2D3BA6B51ECC2CD8008E5372 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D3BA6B11ECC2CD8008E5372 /* 4.jpg */; };
@@ -32,6 +35,11 @@
 		2D5893131F32E69900BD9D51 /* NSString+CLTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D58930F1F32E69900BD9D51 /* NSString+CLTools.m */; };
 		2D5FDF791EFBC25A00D09792 /* ClassifyIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5FDF781EFBC25A00D09792 /* ClassifyIconView.m */; };
 		2D7A84D21EF8FE20004B3538 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A84D11EF8FE20004B3538 /* WebViewController.m */; };
+		2D8A8CE91F550492002D5C2D /* MHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8A8CE81F550492002D5C2D /* MHistoryCell.m */; };
+		2D8A8CEB1F55079F002D5C2D /* 垃圾桶@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D8A8CEA1F55079F002D5C2D /* 垃圾桶@2x.png */; };
+		2D8A8CF11F551EF3002D5C2D /* 圆.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D8A8CF01F551EF3002D5C2D /* 圆.png */; };
+		2D8A8CF51F55328F002D5C2D /* 圆角矩形选择框.svg in Resources */ = {isa = PBXBuildFile; fileRef = 2D8A8CF41F55328F002D5C2D /* 圆角矩形选择框.svg */; };
+		2D8A8CF81F555119002D5C2D /* MSearchLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8A8CF71F555119002D5C2D /* MSearchLayout.m */; };
 		2D920D341EFA7A4400B991D2 /* ClassifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D920D331EFA7A4400B991D2 /* ClassifyView.m */; };
 		2D920D391EFA7AD300B991D2 /* RequstServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D920D381EFA7AD300B991D2 /* RequstServer.m */; };
 		2DF61BF51F417E43008A00B3 /* Widget_content.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF61BF41F417E43008A00B3 /* Widget_content.m */; };
@@ -82,6 +90,12 @@
 		2D0D5B741F5015C800EE1911 /* MSearchKeyWordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSearchKeyWordView.m; sourceTree = "<group>"; };
 		2D0D5B7A1F502F0200EE1911 /* 消息@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "消息@2x.png"; sourceTree = "<group>"; };
 		2D0D5B7B1F502F0200EE1911 /* 扫一扫@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫一扫@2x.png"; sourceTree = "<group>"; };
+		2D34CBDE1F57EDFF006D6FA6 /* MSearchResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSearchResultController.h; sourceTree = "<group>"; };
+		2D34CBDF1F57EDFF006D6FA6 /* MSearchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSearchResultController.m; sourceTree = "<group>"; };
+		2D34CBE11F57FC45006D6FA6 /* MSearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSearchResultCell.h; sourceTree = "<group>"; };
+		2D34CBE21F57FC45006D6FA6 /* MSearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSearchResultCell.m; sourceTree = "<group>"; };
+		2D34CBE41F5801BF006D6FA6 /* MResultListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MResultListViewController.h; sourceTree = "<group>"; };
+		2D34CBE51F5801BF006D6FA6 /* MResultListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MResultListViewController.m; sourceTree = "<group>"; };
 		2D3BA6AC1ECC28A0008E5372 /* SwipeBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeBannerView.h; sourceTree = "<group>"; };
 		2D3BA6AD1ECC28A0008E5372 /* SwipeBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeBannerView.m; sourceTree = "<group>"; };
 		2D3BA6B01ECC2CD8008E5372 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
@@ -111,6 +125,13 @@
 		2D5FDF781EFBC25A00D09792 /* ClassifyIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyIconView.m; sourceTree = "<group>"; };
 		2D7A84D01EF8FE20004B3538 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		2D7A84D11EF8FE20004B3538 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		2D8A8CE71F550492002D5C2D /* MHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHistoryCell.h; sourceTree = "<group>"; };
+		2D8A8CE81F550492002D5C2D /* MHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHistoryCell.m; sourceTree = "<group>"; };
+		2D8A8CEA1F55079F002D5C2D /* 垃圾桶@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "垃圾桶@2x.png"; sourceTree = "<group>"; };
+		2D8A8CF01F551EF3002D5C2D /* 圆.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "圆.png"; sourceTree = "<group>"; };
+		2D8A8CF41F55328F002D5C2D /* 圆角矩形选择框.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "圆角矩形选择框.svg"; sourceTree = "<group>"; };
+		2D8A8CF61F555119002D5C2D /* MSearchLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSearchLayout.h; sourceTree = "<group>"; };
+		2D8A8CF71F555119002D5C2D /* MSearchLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSearchLayout.m; sourceTree = "<group>"; };
 		2D920D321EFA7A4400B991D2 /* ClassifyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyView.h; sourceTree = "<group>"; };
 		2D920D331EFA7A4400B991D2 /* ClassifyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyView.m; sourceTree = "<group>"; };
 		2D920D371EFA7AD300B991D2 /* RequstServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequstServer.h; sourceTree = "<group>"; };
@@ -195,6 +216,16 @@
 				2D0D5B711F4FB6BC00EE1911 /* MSearchViewController.m */,
 				2D0D5B731F5015C800EE1911 /* MSearchKeyWordView.h */,
 				2D0D5B741F5015C800EE1911 /* MSearchKeyWordView.m */,
+				2D8A8CE71F550492002D5C2D /* MHistoryCell.h */,
+				2D8A8CE81F550492002D5C2D /* MHistoryCell.m */,
+				2D8A8CF61F555119002D5C2D /* MSearchLayout.h */,
+				2D8A8CF71F555119002D5C2D /* MSearchLayout.m */,
+				2D34CBDE1F57EDFF006D6FA6 /* MSearchResultController.h */,
+				2D34CBDF1F57EDFF006D6FA6 /* MSearchResultController.m */,
+				2D34CBE11F57FC45006D6FA6 /* MSearchResultCell.h */,
+				2D34CBE21F57FC45006D6FA6 /* MSearchResultCell.m */,
+				2D34CBE41F5801BF006D6FA6 /* MResultListViewController.h */,
+				2D34CBE51F5801BF006D6FA6 /* MResultListViewController.m */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -219,6 +250,9 @@
 		2D3BA6AF1ECC2BB5008E5372 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				2D8A8CF41F55328F002D5C2D /* 圆角矩形选择框.svg */,
+				2D8A8CF01F551EF3002D5C2D /* 圆.png */,
+				2D8A8CEA1F55079F002D5C2D /* 垃圾桶@2x.png */,
 				2D0D5B7A1F502F0200EE1911 /* 消息@2x.png */,
 				2D0D5B7B1F502F0200EE1911 /* 扫一扫@2x.png */,
 				2D5892F11F32B0C700BD9D51 /* 卡券礼包.png */,
@@ -565,11 +599,14 @@
 				2D5892FD1F32B0C700BD9D51 /* 全球美食.png in Resources */,
 				2D5892F91F32B0C700BD9D51 /* 卡券礼包.png in Resources */,
 				2D5892FF1F32B0C700BD9D51 /* 数码配件.png in Resources */,
+				2D8A8CEB1F55079F002D5C2D /* 垃圾桶@2x.png in Resources */,
 				2D3BA6B51ECC2CD8008E5372 /* 4.jpg in Resources */,
 				2D5892FB1F32B0C700BD9D51 /* 母婴精选.png in Resources */,
 				2D5892FC1F32B0C700BD9D51 /* 品牌商户.png in Resources */,
 				2D5892FE1F32B0C700BD9D51 /* 时尚生活.png in Resources */,
+				2D8A8CF51F55328F002D5C2D /* 圆角矩形选择框.svg in Resources */,
 				2D5893001F32B0C700BD9D51 /* 营养保健.png in Resources */,
+				2D8A8CF11F551EF3002D5C2D /* 圆.png in Resources */,
 				2D3BA6B41ECC2CD8008E5372 /* 3.jpg in Resources */,
 				2D0D5B7C1F502F0200EE1911 /* 消息@2x.png in Resources */,
 				2D3BA6B61ECC2CD8008E5372 /* 2.jpg in Resources */,
@@ -657,21 +694,26 @@
 				2DF61BFC1F41881A008A00B3 /* Section_content.m in Sources */,
 				2D920D391EFA7AD300B991D2 /* RequstServer.m in Sources */,
 				2D7A84D21EF8FE20004B3538 /* WebViewController.m in Sources */,
+				2D34CBE01F57EDFF006D6FA6 /* MSearchResultController.m in Sources */,
 				B1A43F241EC4B6A200377912 /* main.m in Sources */,
 				2D0D5B6E1F4E9BAD00EE1911 /* HomeModel.m in Sources */,
+				2D34CBE61F5801BF006D6FA6 /* MResultListViewController.m in Sources */,
 				B1A43F681EC4BDAF00377912 /* MClassifyViewController.m in Sources */,
 				B1A43F5F1EC4BD5700377912 /* MTabbarController.m in Sources */,
 				2D5893121F32E69900BD9D51 /* NSString+Cache.m in Sources */,
+				2D8A8CE91F550492002D5C2D /* MHistoryCell.m in Sources */,
 				2DF61BFE1F41881A008A00B3 /* Widget_object.m in Sources */,
 				2D5893131F32E69900BD9D51 /* NSString+CLTools.m in Sources */,
 				2D5893031F32D9A600BD9D51 /* ActivityEntryView.m in Sources */,
 				2D0D5B721F4FB6BC00EE1911 /* MSearchViewController.m in Sources */,
+				2D34CBE31F57FC45006D6FA6 /* MSearchResultCell.m in Sources */,
 				2D5FDF791EFBC25A00D09792 /* ClassifyIconView.m in Sources */,
 				B1A43F711EC4BDDD00377912 /* MPersonCenterViewController.m in Sources */,
 				2D5893111F32E69900BD9D51 /* CLImageModel.m in Sources */,
 				2DF61BFD1F41881A008A00B3 /* Section_object.m in Sources */,
 				2D0D5B751F5015C800EE1911 /* MSearchKeyWordView.m in Sources */,
 				B1A43F621EC4BD8600377912 /* MNavigationController.m in Sources */,
+				2D8A8CF81F555119002D5C2D /* MSearchLayout.m in Sources */,
 				2D3BA6AE1ECC28A0008E5372 /* SwipeBannerView.m in Sources */,
 				B1A43F651EC4BDA100377912 /* MHomeViewController.m in Sources */,
 				2D920D341EFA7A4400B991D2 /* ClassifyView.m in Sources */,

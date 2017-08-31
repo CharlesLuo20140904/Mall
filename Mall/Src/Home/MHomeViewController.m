@@ -16,10 +16,14 @@
 #import "Section_object.h"
 #import "Section_content.h"
 #import "MSearchViewController.h"
+#import "ActivityEntryView.h"
+#import "MSearchResultController.h"
+#import "MResultListViewController.h"
 
-@interface MHomeViewController ()<UISearchControllerDelegate,UISearchResultsUpdating>
+@interface MHomeViewController ()<UISearchControllerDelegate,UISearchResultsUpdating,MSearchViewDelegate>
 @property (strong, nonatomic) NSArray *section_objects;
 @property (nonatomic, strong) MSearchViewController *searchController;
+@property (nonatomic, strong) MSearchResultController *vc;
 @end
 
 @implementation MHomeViewController
@@ -27,14 +31,16 @@
 -(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
-        
+        /** 不加 **/
+        self.definesPresentationContext = YES;
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    self.hidesBottomBarWhenPushed = YES;
+    
 //    self.hidesBottomBarWhenPushed = YES;
 //    self.automaticallyAdjustsScrollViewInsets = YES;
 //    self.extendedLayoutIncludesOpaqueBars = YES;
@@ -71,21 +77,16 @@
     };
     [self.view addSubview:iconView];
     
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view.backgroundColor = [UIColor redColor];
+    self.vc = [[MSearchResultController alloc] init];
     
-    self.searchController = [[MSearchViewController alloc] initWithSearchResultsController:nil];
+    self.searchController = [[MSearchViewController alloc] initWithSearchResultsController:self.vc];
+    self.searchController.Mdelegate = self;
     self.searchController.searchResultsUpdater = self;
     self.searchController.delegate = self;
-//    self.searchController.searchBar.placeholder = @"search";
-//    self.searchController.searchBar.barTintColor = [UIColor colorWithRed:1.2 green:0.5 blue:0.4 alpha:1.0];
-//    self.searchController.hidesNavigationBarDuringPresentation = NO;
-//    self.searchController.dimsBackgroundDuringPresentation = YES;
-////    [self.searchController.searchBar setcab]
-//    self.searchController.searchBar.tintColor = [UIColor grayColor];
-//    [self.searchController.searchBar setValue:@"取消"forKey:@"_cancelButtonText"];
-//    NSLog(@"%@",self.searchController.view.subviews);
     self.navigationItem.titleView = self.searchController.searchBar;
+    
+    ActivityEntryView *entryView = [[ActivityEntryView alloc] initWithFrame:CGRectMake(0.0, CGRectGetMaxY(iconView.frame), SCREEN_WIDTH, 180.0)];
+    [self.view addSubview:entryView];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -94,9 +95,9 @@
 }
 
 -(void)willPresentSearchController:(UISearchController *)searchController{
-    NSLog(@"++++++");
     self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.rightBarButtonItem = nil;
+    [self.tabBarController.tabBar setHidden:YES];
     
 }
 
@@ -109,6 +110,7 @@
 
 -(void)willDismissSearchController:(UISearchController *)searchController{
     [self navigationItemInit];
+    [self.tabBarController.tabBar setHidden:NO];
 }
 
 -(void)searchBarInit{
@@ -117,6 +119,11 @@
 
 -(void)updateSearchResultsForSearchController:(UISearchController *)searchController{
 
+}
+
+-(void)pushView{
+    MResultListViewController *listVC = [[MResultListViewController alloc] init];
+    [self.navigationController pushViewController:listVC animated:YES];
 }
 
 -(void)scanQrcode{

@@ -9,7 +9,7 @@
 #import "MSearchViewController.h"
 #import "MSearchKeyWordView.h"
 
-@interface MSearchViewController ()
+@interface MSearchViewController ()<UISearchBarDelegate>
 @property(nonatomic,weak)UIView *containerView;
 @end
 
@@ -19,6 +19,7 @@
     self = [super initWithSearchResultsController:searchResultsController];
     if (self) {
         self.searchBar.placeholder = @"search";
+        self.searchBar.delegate = self;
         self.searchBar.barTintColor = [UIColor colorWithRed:1.2 green:0.5 blue:0.4 alpha:1.0];
         self.hidesNavigationBarDuringPresentation = NO;
         self.dimsBackgroundDuringPresentation = NO;
@@ -26,6 +27,7 @@
         UITextField*searchField = [self.searchBar valueForKey:@"_searchField"];
         [searchField setBackgroundColor:[UIColor colorWithRed:245.0/255 green:245.0/255 blue:245.0/255 alpha:1.0]];
         [self.searchBar setValue:@"取消"forKey:@"_cancelButtonText"];
+        searchField.enablesReturnKeyAutomatically = NO;
     }
     return self;
 }
@@ -35,11 +37,16 @@
     self.view.backgroundColor = [UIColor clearColor];
     UIView *containView = [self.view.superview.subviews objectAtIndex:0];
     containView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:[self keyWordView]];
+    [self.view insertSubview:[self keyWordView] atIndex:0];
 }
 
 -(UIView*)keyWordView{
-    MSearchKeyWordView *view = [[MSearchKeyWordView alloc] initWithFrame:CGRectMake(0.0, 64.0, SCREEN_WIDTH, SCREEN_HEIGHT-64.0)];
+    NSArray *historyArr = @[@"面膜",@"奶粉",@"伊斯晶钻蜗牛霜覆防氧化面霜",@"美赞成一段二段三段四段奶粉",@"水果",@"三只松鼠",@"特产美食",@"男装鞋子"];
+    MSearchKeyWordView *keyView = [[MSearchKeyWordView alloc] init];
+    [keyView keyWordViewInitWithFrame:self.view.bounds historyKeys:historyArr hotkeys:nil];
+    keyView.clickCell = ^(NSIndexPath *currentIndexPath) {
+        NSLog(@"%@",currentIndexPath);
+    };
 //    view.backgroundColor = [UIColor whiteColor];
 //    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(20.0, 100.0, 250.0, 50.0)];
 //    [btn setTitle:@"click me" forState:UIControlStateNormal];
@@ -47,7 +54,11 @@
 //    btn.titleLabel.font = [UIFont systemFontOfSize:15];
 //    [btn addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
 //    [view addSubview:btn];
-    return view;
+    return keyView;
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.Mdelegate pushView];
 }
 
 -(void)test{

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ActivityEntryView : UIView
-
+@property (strong, nonatomic) NSArray *imageArr;
 @end
