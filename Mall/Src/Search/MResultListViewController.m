@@ -7,6 +7,7 @@
 //
 
 #import "MResultListViewController.h"
+#import "MHomeViewController.h"
 
 @interface MResultListViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (strong, nonatomic) UICollectionView *collectionView;
@@ -16,18 +17,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.navigationController.navigationBar.translucent = NO;
-//    self.extendedLayoutIncludesOpaqueBars=YES;
-    self.automaticallyAdjustsScrollViewInsets=NO;
-    self.view.backgroundColor = [UIColor greenColor];
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREEN_WIDTH, SCREEN_HEIGHT-15.0) collectionViewLayout:layout];
-    self.collectionView.backgroundColor = [UIColor redColor];
+    self.collectionView.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"historyCell"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"historyHeader"];
     [self.view addSubview:self.collectionView];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tabBarController.tabBar setHidden:YES];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    MHomeViewController *cc = [self.navigationController.viewControllers objectAtIndex:0];
+    NSLog(@"%@",self.tabBarController);
+    if (cc.searchController.active) {
+        cc.searchController.active = NO;
+    }
+    
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{

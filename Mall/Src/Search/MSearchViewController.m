@@ -20,7 +20,7 @@
     if (self) {
         self.searchBar.placeholder = @"search";
         self.searchBar.delegate = self;
-        self.searchBar.barTintColor = [UIColor colorWithRed:1.2 green:0.5 blue:0.4 alpha:1.0];
+        self.searchBar.barTintColor = [UIColor whiteColor];
         self.hidesNavigationBarDuringPresentation = NO;
         self.dimsBackgroundDuringPresentation = NO;
         self.searchBar.tintColor = [UIColor grayColor];
@@ -38,6 +38,10 @@
     UIView *containView = [self.view.superview.subviews objectAtIndex:0];
     containView.backgroundColor = [UIColor clearColor];
     [self.view insertSubview:[self keyWordView] atIndex:0];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tabBarController.tabBar setHidden:YES];
 }
 
 -(UIView*)keyWordView{
@@ -58,6 +62,8 @@
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+//    self.active = NO;
+    
     [self.Mdelegate pushView];
 }
 

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MResultListViewController : UIViewController
-
+@property (assign, nonatomic) BOOL isFromSearch;
 @end

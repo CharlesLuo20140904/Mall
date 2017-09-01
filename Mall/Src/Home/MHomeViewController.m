@@ -15,15 +15,14 @@
 #import "HomeModel.h"
 #import "Section_object.h"
 #import "Section_content.h"
-#import "MSearchViewController.h"
 #import "ActivityEntryView.h"
 #import "MSearchResultController.h"
 #import "MResultListViewController.h"
 
 @interface MHomeViewController ()<UISearchControllerDelegate,UISearchResultsUpdating,MSearchViewDelegate>
 @property (strong, nonatomic) NSArray *section_objects;
-@property (nonatomic, strong) MSearchViewController *searchController;
 @property (nonatomic, strong) MSearchResultController *vc;
+@property (assign, nonatomic) BOOL shouldHideTabbar;
 @end
 
 @implementation MHomeViewController
@@ -33,12 +32,14 @@
     if (self) {
         /** 不加 **/
         self.definesPresentationContext = YES;
+        [self navigationItemInit];
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
 //    self.hidesBottomBarWhenPushed = YES;
     
 //    self.hidesBottomBarWhenPushed = YES;
@@ -91,14 +92,18 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self navigationItemInit];
+    [self.tabBarController.tabBar setHidden:NO];
 }
 
 -(void)willPresentSearchController:(UISearchController *)searchController{
+    self.shouldHideTabbar = NO;
+    [self hideNavigationItem];
+}
+
+-(void)hideNavigationItem{
     self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.rightBarButtonItem = nil;
     [self.tabBarController.tabBar setHidden:YES];
-    
 }
 
 -(void)navigationItemInit{
@@ -109,8 +114,15 @@
 }
 
 -(void)willDismissSearchController:(UISearchController *)searchController{
+    NSLog(@"willDismissSearchController");
     [self navigationItemInit];
-    [self.tabBarController.tabBar setHidden:NO];
+    if (!self.shouldHideTabbar) {
+        [self.tabBarController.tabBar setHidden:NO];
+    }
+}
+
+-(void)presentSearchController:(UISearchController *)searchController{
+    NSLog(@"+++++");
 }
 
 -(void)searchBarInit{
@@ -122,12 +134,17 @@
 }
 
 -(void)pushView{
-    MResultListViewController *listVC = [[MResultListViewController alloc] init];
+    MResultListViewController * listVC = [[MResultListViewController alloc] init];
+    self.shouldHideTabbar = YES;
+    NSLog(@"%@",self.navigationController.viewControllers);
     [self.navigationController pushViewController:listVC animated:YES];
+//    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)scanQrcode{
-
+    MResultListViewController *listVC = [[MResultListViewController alloc] init];
+    NSLog(@"%@",self.navigationController.viewControllers);
+    [self.navigationController pushViewController:listVC animated:YES];
 }
 
 

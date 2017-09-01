@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSearchViewController.h"
 
 @interface MHomeViewController : UIViewController
-
+@property (nonatomic, strong) MSearchViewController *searchController;
 @end
