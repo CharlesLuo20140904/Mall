@@ -26,7 +26,7 @@
 
 -(void)iconViewWithIconData:(NSDictionary*)iconDataDict{
     NSArray *imgArray = @[@"母婴精选",@"时尚生活",@"全球美食",@"美妆个护"];
-    self.frame = CGRectMake(0.0, SCREEN_WIDTH/2, SCREEN_WIDTH, imgArray.count/4*80.0);
+    self.frame = CGRectMake(0.0, 0.0, SCREEN_WIDTH, imgArray.count/4*80.0);
     for (int i=0; i<imgArray.count; i++) {
         NSInteger column = i/4;
         UIView *iconView = [[UIView alloc] initWithFrame:CGRectMake(10.0+(i%4)*(70.0+ICON_SPACE), 0.0+column*(80), 70.0, 70.0)];

@@ -49,6 +49,7 @@
     MSearchKeyWordView *keyView = [[MSearchKeyWordView alloc] init];
     [keyView keyWordViewInitWithFrame:self.view.bounds historyKeys:historyArr hotkeys:nil];
     keyView.clickCell = ^(NSIndexPath *currentIndexPath) {
+        
         NSLog(@"%@",currentIndexPath);
     };
 //    view.backgroundColor = [UIColor whiteColor];

@@ -7,17 +7,16 @@
 //
 
 #import "MHomeViewController.h"
-#import "SwipeBannerView.h"
 #import "WebViewController.h"
-#import "ClassifyIconView.h"
 #import "CLNetworkingManager.h"
 #import <JSONModel/JSONModel.h>
 #import "HomeModel.h"
 #import "Section_object.h"
 #import "Section_content.h"
-#import "ActivityEntryView.h"
 #import "MSearchResultController.h"
 #import "MResultListViewController.h"
+#import "MSortComponent.h"
+#import "ComponentTableView.h"
 
 @interface MHomeViewController ()<UISearchControllerDelegate,UISearchResultsUpdating,MSearchViewDelegate>
 @property (strong, nonatomic) NSArray *section_objects;
@@ -39,17 +38,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-//    self.hidesBottomBarWhenPushed = YES;
-    
-//    self.hidesBottomBarWhenPushed = YES;
-//    self.automaticallyAdjustsScrollViewInsets = YES;
-//    self.extendedLayoutIncludesOpaqueBars = YES;
-//    self.automaticallyAdjustsScrollViewInsets = YES;
-//    self.edgesForExtendedLayout = UIRectEdgeNone;
-//    self.navigationController.navigationBar.translucent = NO;
-//    self.navigationController.toolbar.translucent = NO;
-    NSArray *imageArr = @[@"1.jpg",@"2.jpg",@"3.jpg",@"4.jpg",];
+    ComponentTableView *mainView = [[ComponentTableView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREEN_WIDTH, SCREEN_HEIGHT-64.0)];
+    MSortComponent *sortComponent = [[MSortComponent alloc] init];
+    mainView.ViewArr = [sortComponent viewDataInit];
+    [self.view addSubview:mainView];
     [CLNetworkingManager getNetworkRequestWithUrlString:HOME_TAB_SCENE_URL parameters:nil isCache:YES succeed:^(id data) {
 //        NSLog(@"%@",data);
         NSData *dstr = [NSJSONSerialization dataWithJSONObject:[data objectForKey:@"data"] options:NSJSONWritingPrettyPrinted error:nil];
@@ -60,34 +52,16 @@
     } fail:^(NSError *error) {
         
     }];
-    SwipeBannerView *swipeView = [[SwipeBannerView alloc] init];
-    [swipeView swipeViewInitWithFrame:CGRectMake(0.0, 0.0,SCREEN_WIDTH, SCREEN_WIDTH/2)
-                            Imageurls:imageArr indicatorTintColor:[UIColor grayColor]
-            currentIndicatorTintColor:[UIColor redColor]
-                             duration:3];
-    swipeView.clickImgAction = ^(NSInteger curIndex) {
-        if (curIndex == 0) {
-            NSLog(@"succeed");
-        }
-    };
-    [self.view addSubview:swipeView];
-    ClassifyIconView *iconView = [[ClassifyIconView alloc] init];
-    [iconView iconViewWithIconData:nil];
-    iconView.clickIconAction = ^(NSInteger curIndex) {
-        NSLog(@"%zi",curIndex);
-    };
-    [self.view addSubview:iconView];
+
+    
     
     self.vc = [[MSearchResultController alloc] init];
-    
     self.searchController = [[MSearchViewController alloc] initWithSearchResultsController:self.vc];
     self.searchController.Mdelegate = self;
     self.searchController.searchResultsUpdater = self;
     self.searchController.delegate = self;
     self.navigationItem.titleView = self.searchController.searchBar;
     
-    ActivityEntryView *entryView = [[ActivityEntryView alloc] initWithFrame:CGRectMake(0.0, CGRectGetMaxY(iconView.frame), SCREEN_WIDTH, 180.0)];
-    [self.view addSubview:entryView];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -95,6 +69,7 @@
     [self.tabBarController.tabBar setHidden:NO];
 }
 
+/*****搜索框方法******/
 -(void)willPresentSearchController:(UISearchController *)searchController{
     self.shouldHideTabbar = NO;
     [self hideNavigationItem];
@@ -125,12 +100,9 @@
     NSLog(@"+++++");
 }
 
--(void)searchBarInit{
-
-}
 
 -(void)updateSearchResultsForSearchController:(UISearchController *)searchController{
-
+    NSLog(@"--------");
 }
 
 -(void)pushView{
@@ -147,10 +119,13 @@
     [self.navigationController pushViewController:listVC animated:YES];
 }
 
-
 -(void)showMessage{
-
+    
 }
+
+/************/
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
