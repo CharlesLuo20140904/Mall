@@ -29,16 +29,16 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.tabBarController.tabBar setHidden:YES];
+//    [self.tabBarController.tabBar setHidden:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    MHomeViewController *cc = [self.navigationController.viewControllers objectAtIndex:0];
-    NSLog(@"%@",self.tabBarController);
-    if (cc.searchController.active) {
-        cc.searchController.active = NO;
-    }
+//    MHomeViewController *cc = [self.navigationController.viewControllers objectAtIndex:0];
+//    NSLog(@"%@",self.tabBarController);
+//    if (cc.searchController.active) {
+//        cc.searchController.active = NO;
+//    }
     
 }
 

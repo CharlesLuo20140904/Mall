@@ -50,6 +50,8 @@
 		2DF61BFD1F41881A008A00B3 /* Section_object.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF61BF91F41881A008A00B3 /* Section_object.m */; };
 		2DF61BFE1F41881A008A00B3 /* Widget_object.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF61BFB1F41881A008A00B3 /* Widget_object.m */; };
 		3A26725217A8A99170864C35 /* Pods_Mall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1767A3B5DDF63ABB86361D29 /* Pods_Mall.framework */; };
+		B15DE0A32186F0FF0085B502 /* MWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = B15DE0A22186F0FF0085B502 /* MWebView.m */; };
+		B15DE0A82186F7130085B502 /* MWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15DE0A72186F7130085B502 /* MWebViewController.m */; };
 		B1A43F241EC4B6A200377912 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A43F231EC4B6A200377912 /* main.m */; };
 		B1A43F271EC4B6A200377912 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A43F261EC4B6A200377912 /* AppDelegate.m */; };
 		B1A43F2F1EC4B6A200377912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1A43F2E1EC4B6A200377912 /* Assets.xcassets */; };
@@ -63,6 +65,8 @@
 		B1A43F6B1EC4BDC000377912 /* MActivitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A43F6A1EC4BDC000377912 /* MActivitiesViewController.m */; };
 		B1A43F6E1EC4BDCB00377912 /* MCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A43F6D1EC4BDCB00377912 /* MCartViewController.m */; };
 		B1A43F711EC4BDDD00377912 /* MPersonCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A43F701EC4BDDD00377912 /* MPersonCenterViewController.m */; };
+		B1DC5A412187EEB400A7BF14 /* MImagePickController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DC5A402187EEB400A7BF14 /* MImagePickController.m */; };
+		B1DC5A442187FB7C00A7BF14 /* MAVCaptureController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DC5A432187FB7B00A7BF14 /* MAVCaptureController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +158,10 @@
 		2DF61BFA1F41881A008A00B3 /* Widget_object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Widget_object.h; sourceTree = "<group>"; };
 		2DF61BFB1F41881A008A00B3 /* Widget_object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Widget_object.m; sourceTree = "<group>"; };
 		AB60D5F24B7415CAA2E1C36B /* Pods-Mall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mall/Pods-Mall.debug.xcconfig"; sourceTree = "<group>"; };
+		B15DE0A12186F0FF0085B502 /* MWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MWebView.h; sourceTree = "<group>"; };
+		B15DE0A22186F0FF0085B502 /* MWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MWebView.m; sourceTree = "<group>"; };
+		B15DE0A62186F7130085B502 /* MWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MWebViewController.h; sourceTree = "<group>"; };
+		B15DE0A72186F7130085B502 /* MWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MWebViewController.m; sourceTree = "<group>"; };
 		B1A43F1F1EC4B6A200377912 /* Mall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A43F231EC4B6A200377912 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B1A43F251EC4B6A200377912 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -182,6 +190,10 @@
 		B1A43F6D1EC4BDCB00377912 /* MCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCartViewController.m; sourceTree = "<group>"; };
 		B1A43F6F1EC4BDDD00377912 /* MPersonCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPersonCenterViewController.h; sourceTree = "<group>"; };
 		B1A43F701EC4BDDD00377912 /* MPersonCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPersonCenterViewController.m; sourceTree = "<group>"; };
+		B1DC5A3F2187EEB400A7BF14 /* MImagePickController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MImagePickController.h; sourceTree = "<group>"; };
+		B1DC5A402187EEB400A7BF14 /* MImagePickController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MImagePickController.m; sourceTree = "<group>"; };
+		B1DC5A422187FB7B00A7BF14 /* MAVCaptureController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAVCaptureController.h; sourceTree = "<group>"; };
+		B1DC5A432187FB7B00A7BF14 /* MAVCaptureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAVCaptureController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +268,8 @@
 				2D3EB2E21F5ECEAD00E03E94 /* ScreenHeaderView.m */,
 				2DB433B41F668EDC00C64B51 /* ComponentTableView.h */,
 				2DB433B51F668EDC00C64B51 /* ComponentTableView.m */,
+				B15DE0A12186F0FF0085B502 /* MWebView.h */,
+				B15DE0A22186F0FF0085B502 /* MWebView.m */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -360,6 +374,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B15DE0A52186F6920085B502 /* MWebView */ = {
+			isa = PBXGroup;
+			children = (
+				B15DE0A62186F7130085B502 /* MWebViewController.h */,
+				B15DE0A72186F7130085B502 /* MWebViewController.m */,
+			);
+			path = MWebView;
+			sourceTree = "<group>";
+		};
 		B1A43F161EC4B6A200377912 = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +447,8 @@
 		B1A43F551EC4B6AF00377912 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				B1DC5A3E21874C5D00A7BF14 /* AVCapture */,
+				B15DE0A52186F6920085B502 /* MWebView */,
 				2D0D5B6F1F4FB67F00EE1911 /* Search */,
 				2D920D351EFA7A7000B991D2 /* Util */,
 				2D3BA6AF1ECC2BB5008E5372 /* Resource */,
@@ -499,6 +524,18 @@
 			path = PersonCenter;
 			sourceTree = "<group>";
 		};
+		B1DC5A3E21874C5D00A7BF14 /* AVCapture */ = {
+			isa = PBXGroup;
+			children = (
+				B1DC5A3F2187EEB400A7BF14 /* MImagePickController.h */,
+				B1DC5A402187EEB400A7BF14 /* MImagePickController.m */,
+				B1DC5A422187FB7B00A7BF14 /* MAVCaptureController.h */,
+				B1DC5A432187FB7B00A7BF14 /* MAVCaptureController.m */,
+			);
+			name = AVCapture;
+			path = AVCapture/AVCapture;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -510,8 +547,7 @@
 				B1A43F1B1EC4B6A200377912 /* Sources */,
 				B1A43F1C1EC4B6A200377912 /* Frameworks */,
 				B1A43F1D1EC4B6A200377912 /* Resources */,
-				6B7A758CE1FEA1061FA52D19 /* [CP] Embed Pods Frameworks */,
-				B1D0B8FDB1B7763E7A0CBF3B /* [CP] Copy Pods Resources */,
+				CCD2FB00D078B132E62B41E6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -564,7 +600,7 @@
 		B1A43F171EC4B6A200377912 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = luo;
 				TargetAttributes = {
 					B1A43F1E1EC4B6A200377912 = {
@@ -656,43 +692,36 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mall-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6B7A758CE1FEA1061FA52D19 /* [CP] Embed Pods Frameworks */ = {
+		CCD2FB00D078B132E62B41E6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Mall/Pods-Mall-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mall/Pods-Mall-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B1D0B8FDB1B7763E7A0CBF3B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mall/Pods-Mall-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -716,6 +745,7 @@
 				B1A43F681EC4BDAF00377912 /* MClassifyViewController.m in Sources */,
 				2D3EB2E61F5ED16E00E03E94 /* MSortComponent.m in Sources */,
 				B1A43F5F1EC4BD5700377912 /* MTabbarController.m in Sources */,
+				B15DE0A32186F0FF0085B502 /* MWebView.m in Sources */,
 				2D5893121F32E69900BD9D51 /* NSString+Cache.m in Sources */,
 				2D8A8CE91F550492002D5C2D /* MHistoryCell.m in Sources */,
 				2DF61BFE1F41881A008A00B3 /* Widget_object.m in Sources */,
@@ -732,10 +762,13 @@
 				B1A43F621EC4BD8600377912 /* MNavigationController.m in Sources */,
 				2D8A8CF81F555119002D5C2D /* MSearchLayout.m in Sources */,
 				2DB433B61F668EDC00C64B51 /* ComponentTableView.m in Sources */,
+				B1DC5A412187EEB400A7BF14 /* MImagePickController.m in Sources */,
 				2D3BA6AE1ECC28A0008E5372 /* SwipeBannerView.m in Sources */,
 				B1A43F651EC4BDA100377912 /* MHomeViewController.m in Sources */,
+				B15DE0A82186F7130085B502 /* MWebViewController.m in Sources */,
 				2D920D341EFA7A4400B991D2 /* ClassifyView.m in Sources */,
 				B1A43F6B1EC4BDC000377912 /* MActivitiesViewController.m in Sources */,
+				B1DC5A442187FB7C00A7BF14 /* MAVCaptureController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,15 +824,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -838,15 +879,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

@@ -34,8 +34,6 @@
 
 -(void)swipeViewInitWithFrame:(CGRect)frame Imageurls:(NSArray *)imgUrls indicatorTintColor:(UIColor *)color currentIndicatorTintColor:(UIColor *)currentColor duration:(NSTimeInterval)duration{
     self.frame = frame;
-    self.scrollView.frame = frame;
-    [self addSubview:self.scrollView];
     self.imageNameArr = imgUrls;
     
     /** 如果是1张图，不显示小圆点，同时不启动轮播 **/
@@ -43,10 +41,12 @@
         if (self.imageNameArr.count == 1) {
             [self.scrollView setContentOffset:CGPointMake(SCREEN_WIDTH, 0.0)];
             /** 中间的imageView **/
-            self.centerImageView.frame = CGRectMake(SCREEN_WIDTH, 0.0, SCREEN_WIDTH, frame.size.height);
+            self.centerImageView.frame = CGRectMake(0.0, 0.0, SCREEN_WIDTH, frame.size.height);
             self.centerImageView.image = [UIImage imageNamed:self.imageNameArr[0]];
-            [self.scrollView addSubview:self.centerImageView];
+            [self addSubview:self.centerImageView];
         }else{
+            self.scrollView.frame = frame;
+            [self addSubview:self.scrollView];
             self.scrollView.contentSize = CGSizeMake(3*SCREEN_WIDTH, 0.0);
             [self.scrollView setContentOffset:CGPointMake(SCREEN_WIDTH, 0.0)];
             /** 左边的imageView **/

@@ -76,7 +76,7 @@
     ClassifyIconView *iconView = [[ClassifyIconView alloc] init];
     [iconView iconViewWithIconData:nil];
     iconView.clickIconAction = ^(NSInteger curIndex) {
-        NSLog(@"%zi",curIndex);
+        [self.delegate clickObject:nil withType:nil];
     };
     return iconView;
 }

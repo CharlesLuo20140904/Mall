@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ComponentDelegate <NSObject>
+
+@required
+-(void)clickObject:(id)objc withType:(NSString *)type;
+
+@end
+
 @interface MSortComponent : NSObject
+@property (weak, nonatomic) id<ComponentDelegate> delegate;
 @property (strong, nonatomic) NSArray *slideViewDatas;
 -(NSMutableArray *)viewDataInit;
 @end

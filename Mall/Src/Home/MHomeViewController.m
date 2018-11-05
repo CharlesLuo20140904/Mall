@@ -17,8 +17,10 @@
 #import "MResultListViewController.h"
 #import "MSortComponent.h"
 #import "ComponentTableView.h"
+#import "MWebViewController.h"
+#import "MImagePickController.h"
 
-@interface MHomeViewController ()<UISearchControllerDelegate,UISearchResultsUpdating,MSearchViewDelegate>
+@interface MHomeViewController ()<UISearchControllerDelegate,UISearchResultsUpdating,MSearchViewDelegate,ComponentDelegate>
 @property (strong, nonatomic) NSArray *section_objects;
 @property (nonatomic, strong) MSearchResultController *vc;
 @property (assign, nonatomic) BOOL shouldHideTabbar;
@@ -40,6 +42,7 @@
     [super viewDidLoad];
     ComponentTableView *mainView = [[ComponentTableView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREEN_WIDTH, SCREEN_HEIGHT-64.0)];
     MSortComponent *sortComponent = [[MSortComponent alloc] init];
+    sortComponent.delegate = self;
     mainView.ViewArr = [sortComponent viewDataInit];
     [self.view addSubview:mainView];
     [CLNetworkingManager getNetworkRequestWithUrlString:HOME_TAB_SCENE_URL parameters:nil isCache:YES succeed:^(id data) {
@@ -60,25 +63,40 @@
     self.searchController.Mdelegate = self;
     self.searchController.searchResultsUpdater = self;
     self.searchController.delegate = self;
-    self.navigationItem.titleView = self.searchController.searchBar;
+    if (@available(iOS 11.0, *)) {
+        self.navigationItem.searchController = self.searchController;
+        self.searchController.active = YES;
+    } else {
+        // Fallback on earlier versions
+        self.navigationItem.titleView = self.searchController.searchBar;
+    }
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.tabBarController.tabBar setHidden:NO];
+//    [self.tabBarController.tabBar setHidden:NO];
+    
+
+}
+
+/*****组件委托方法*****/
+-(void)clickObject:(id)objc withType:(NSString *)type{
+    MWebViewController *mwc = [[MWebViewController alloc] init];
+    mwc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:mwc animated:YES];
 }
 
 /*****搜索框方法******/
 -(void)willPresentSearchController:(UISearchController *)searchController{
-    self.shouldHideTabbar = NO;
-    [self hideNavigationItem];
+//    self.shouldHideTabbar = NO;
+//    [self hideNavigationItem];
 }
 
 -(void)hideNavigationItem{
     self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.rightBarButtonItem = nil;
-    [self.tabBarController.tabBar setHidden:YES];
+//    [self.tabBarController.tabBar setHidden:YES];
 }
 
 -(void)navigationItemInit{
@@ -90,11 +108,15 @@
 
 -(void)willDismissSearchController:(UISearchController *)searchController{
     NSLog(@"willDismissSearchController");
-    [self navigationItemInit];
-    if (!self.shouldHideTabbar) {
-        [self.tabBarController.tabBar setHidden:NO];
-    }
+//    [self navigationItemInit];
+//    if (!self.shouldHideTabbar) {
+//        [self.tabBarController.tabBar setHidden:NO];
+//    }
 }
+
+//-(void)willPresentSearchController:(UISearchController *)searchController{
+//
+//}
 
 -(void)presentSearchController:(UISearchController *)searchController{
     NSLog(@"+++++");
@@ -107,16 +129,16 @@
 
 -(void)pushView{
     MResultListViewController * listVC = [[MResultListViewController alloc] init];
-    self.shouldHideTabbar = YES;
-    NSLog(@"%@",self.navigationController.viewControllers);
+//    self.shouldHideTabbar = YES;
+    listVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:listVC animated:YES];
 //    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)scanQrcode{
-    MResultListViewController *listVC = [[MResultListViewController alloc] init];
-    NSLog(@"%@",self.navigationController.viewControllers);
-    [self.navigationController pushViewController:listVC animated:YES];
+    MImagePickController *Pvc = [[MImagePickController alloc] init];
+    Pvc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:Pvc animated:YES];
 }
 
 -(void)showMessage{

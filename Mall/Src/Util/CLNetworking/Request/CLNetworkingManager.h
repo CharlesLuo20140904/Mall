@@ -2,8 +2,8 @@
 //  CLNetworkingManager.h
 //  Networking
 //
-//  Created by ClaudeLi on 16/4/28.
-//  Copyright © 2016年 ClaudeLi. All rights reserved.
+//  Created by CharlesLaws on 16/4/28.
+//  Copyright © 2016年 CharlesLaws. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -83,7 +83,7 @@
                  parameters:(id)parameters
                       model:(CLImageModel *)model
                    progress:(void (^)(float writeKB, float totalKB)) progress
-                    succeed:(void (^)())succeed
+                    succeed:(void (^)(void))succeed
                        fail:(void (^)(NSError *error))fail;
 
 /**

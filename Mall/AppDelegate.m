@@ -22,6 +22,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     MTabbarController *tc = [[MTabbarController alloc] init];
     self.window.rootViewController = tc;
+//    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

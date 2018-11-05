@@ -16,9 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationBar.barTintColor = [UIColor whiteColor];
-    self.navigationBar.translucent = NO;
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    self.navigationBar.barTintColor = [UIColor whiteColor];
+//    self.navigationBar.translucent = NO;
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning {
