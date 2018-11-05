@@ -50,6 +50,7 @@
 		2DF61BFD1F41881A008A00B3 /* Section_object.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF61BF91F41881A008A00B3 /* Section_object.m */; };
 		2DF61BFE1F41881A008A00B3 /* Widget_object.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF61BFB1F41881A008A00B3 /* Widget_object.m */; };
 		3A26725217A8A99170864C35 /* Pods_Mall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1767A3B5DDF63ABB86361D29 /* Pods_Mall.framework */; };
+		B156D06721908F9B00E12C28 /* labelBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B156D06621908F9B00E12C28 /* labelBackground.png */; };
 		B15DE0A32186F0FF0085B502 /* MWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = B15DE0A22186F0FF0085B502 /* MWebView.m */; };
 		B15DE0A82186F7130085B502 /* MWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15DE0A72186F7130085B502 /* MWebViewController.m */; };
 		B1A43F241EC4B6A200377912 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A43F231EC4B6A200377912 /* main.m */; };
@@ -158,6 +159,7 @@
 		2DF61BFA1F41881A008A00B3 /* Widget_object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Widget_object.h; sourceTree = "<group>"; };
 		2DF61BFB1F41881A008A00B3 /* Widget_object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Widget_object.m; sourceTree = "<group>"; };
 		AB60D5F24B7415CAA2E1C36B /* Pods-Mall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mall/Pods-Mall.debug.xcconfig"; sourceTree = "<group>"; };
+		B156D06621908F9B00E12C28 /* labelBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = labelBackground.png; sourceTree = "<group>"; };
 		B15DE0A12186F0FF0085B502 /* MWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MWebView.h; sourceTree = "<group>"; };
 		B15DE0A22186F0FF0085B502 /* MWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MWebView.m; sourceTree = "<group>"; };
 		B15DE0A62186F7130085B502 /* MWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MWebViewController.h; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				2D3BA6B11ECC2CD8008E5372 /* 4.jpg */,
 				2D3BA6B21ECC2CD8008E5372 /* 2.jpg */,
 				2D3BA6B31ECC2CD8008E5372 /* 1.jpg */,
+				B156D06621908F9B00E12C28 /* labelBackground.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -661,6 +664,7 @@
 				2D3BA6B41ECC2CD8008E5372 /* 3.jpg in Resources */,
 				2D0D5B7C1F502F0200EE1911 /* 消息@2x.png in Resources */,
 				2D3BA6B61ECC2CD8008E5372 /* 2.jpg in Resources */,
+				B156D06721908F9B00E12C28 /* labelBackground.png in Resources */,
 				2D3BA6B71ECC2CD8008E5372 /* 1.jpg in Resources */,
 				2D5892FA1F32B0C700BD9D51 /* 美妆个护.png in Resources */,
 				2D0D5B7D1F502F0200EE1911 /* 扫一扫@2x.png in Resources */,
